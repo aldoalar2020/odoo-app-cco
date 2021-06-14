@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+        <record id="view_form_mail_template_inherit" model="ir.ui.view">
+            <field name="name">view.form.mail.template.inherit</field>
+            <field name="model">mail.template</field>
+            <field name="inherit_id" ref="mail.email_template_form" />
+            <field name="arch" type="xml">
+                
+                <xpath expr="//field[@name='email_cc']" position="after">
+                    <field name="email_cco" attrs="{'invisible': [('use_default_to', '=', True)]}" placeholder="Comma-separated carbon copy recipients addresses"/>
+                </xpath>
+
+
+            </field>
+        </record>
+
+
+
+
+
+
+</odoo>
